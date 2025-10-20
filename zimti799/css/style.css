@@ -6,12 +6,7 @@
 /* */
 /* global css varibales*/
 :root {
-   /* width max*/
-  --max-width: 1000px;
-
-   /* colour theme*/
-:root {
-  --bg: #F5EDE0;
+  --bg: #F2E4CF;
   --card: #FAF6F1;
   --text: #3B2F2F;
   --muted: #7C5E57;
@@ -25,7 +20,7 @@
 body {
   font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   margin: 0;
-  background: linear-gradient(180deg, var(--bg) 0%, #fffdf9 100%);
+  background: linear-gradient(180deg, var(--bg) 0%, #fffaf4 100%);
   color: var(--text);
   line-height: 1.5;
 }
@@ -53,7 +48,8 @@ body {
 .brand a {
   color: white;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .nav a {
@@ -187,35 +183,6 @@ body {
 
 .about-page h2 {
   color: var(--header-bg1);
-}
-
-
-/* ===== Navigation Buttons ===== */
-.nav a {
-  background: var(--accent);
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 8px 14px;
-  border-radius: 8px;
-  margin-left: 10px;
-  transition: background 0.2s ease, transform 0.1s ease;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-.nav a:hover {
-  background: var(--accent-dark);
-  transform: translateY(-2px);
-}
-.nav a:active {
-  transform: scale(0.98);
-}
-
-/* Optional: header spacing tweak */
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
 }
 
 
