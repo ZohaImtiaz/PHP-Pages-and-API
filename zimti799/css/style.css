@@ -1,1 +1,41 @@
+/* css/style.css
+   COMP3512 Assignment 1  
+   Author: Zoha Imtiaz
+*/
+
+:root {
+  --max-width: 1000px;
+  --accent: #b23a48;      
+  --accent-dark: #8f2f3a;
+  --bg: #f5efe7;          
+  --card: #fffaf4;       
+  --text: #2f1e14;       
+  --muted: #6a4e42;     
+  --header-bg1: #5c4033; 
+  --header-bg2: #8b5e3c;  
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Containers */
+.container {
+  max-width: var(--max-width);
+  margin: 22px auto;
+  padding: 0 16px;
+}
+
+/* Header */
+.site-header {
+  background: linear-gradient(90deg, var(--header-bg1), var(--header-bg2));
+  color: white;
+  padding: 14px 0;
+  box-shadow: 0 2px 6px
 
