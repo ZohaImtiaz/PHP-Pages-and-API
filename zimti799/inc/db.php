@@ -10,9 +10,6 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-    //  number of users in DB
-    $count = $pdo->query("SELECT COUNT(*) AS c FROM users")->fetch()['c'];
-    echo "<p style='color:red;'>DEBUG: Found $count users in the database.</p>";
 
 } catch (PDOException $e) {
     http_response_code(500);
