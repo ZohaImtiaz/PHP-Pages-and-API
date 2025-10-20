@@ -17,7 +17,8 @@ $result = $pdo->query($sql);
     <?php foreach ($result as $u): ?>
       <li>
         <strong><?= htmlspecialchars($u['firstName'] . ' ' . $u['lastName']) ?></strong>
-        <a class="btn small" href="portfolio.php?ref=<?= urlencode($u['userId']) ?>">Portfolio</a>
+
+        <a class="btn small" href="portfolio.php?ref=<?= urlencode($u['id']) ?>">Portfolio</a>
       </li>
     <?php endforeach; ?>
   </ul>
