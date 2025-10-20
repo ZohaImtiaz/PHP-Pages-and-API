@@ -3,8 +3,16 @@ require_once __DIR__ . '/inc/db.php';
 include __DIR__ . '/inc/header.php';
 
 try {
-    $stmt = $pdo->query("SELECT * FROM users ORDER BY lastName ASC");
-    $users = $stmt->fetchAll();
+    $stmt = $pdo->query("
+  SELECT
+    UserId   AS userId,
+    FirstName AS firstName,
+    LastName  AS lastName
+  FROM users
+  ORDER BY LastName ASC
+");
+$users = $stmt->fetchAll();
+
 } catch (Exception $e) {
     $users = [];
     $error = $e->getMessage();
