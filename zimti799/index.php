@@ -7,26 +7,33 @@
 require_once __DIR__ . '/inc/db.php';
 include __DIR__ . '/inc/header.php';
 
-$sql = "SELECT id, firstName, lastName FROM users";
+// Query users table — correct column names
+$sql = "SELECT id, first_name, last_name FROM users ORDER BY last_name ASC";
 $result = $pdo->query($sql);
 ?>
 
 <div class="container">
-  <h2>Users</h2>
-  <ul class="company-list">
-    <?php foreach ($result as $u): ?>
-      <li>
-        <strong><?= htmlspecialchars($u['firstName'] . ' ' . $u['lastName']) ?></strong>
+  <h2>Customers</h2>
 
-        <a class="btn small" href="portfolio.php?ref=<?= urlencode($u['id']) ?>">Portfolio</a>
-      </li>
-    <?php endforeach; ?>
-  </ul>
+  <?php if ($result->rowCount() > 0): ?>
+    <ul class="company-list">
+      <?php foreach ($result as $u): ?>
+        <li>
+          <strong><?= htmlspecialchars($u['last_name']) ?>, <?= htmlspecialchars($u['first_name']) ?></strong>
+          <a class="btn small" href="portfolio.php?ref=<?= urlencode($u['id']) ?>">Portfolio</a>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+  <?php else: ?>
+    <p class="error">No users found in database.</p>
+  <?php endif; ?>
+
 </div>
 
 <footer>
   © 2025 Stock Viewer — COMP 3512 Assignment 1
 </footer>
+
 </main>
 </body>
 </html>
