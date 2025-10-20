@@ -4,15 +4,15 @@
 */
 
 :root {
-  --max-width: 1000px;
-  --accent: #b23a48;      
-  --accent-dark: #8f2f3a;
-  --bg: #f5efe7;          
-  --card: #fffaf4;       
-  --text: #2f1e14;       
-  --muted: #6a4e42;     
-  --header-bg1: #5c4033; 
-  --header-bg2: #8b5e3c;  
+  max-width: 1000px;
+  accent: #b23a48;      
+  accent-dark: #8f2f3a;
+  bg: #f5efe7;          
+  card: #fffaf4;       
+  text: #2f1e14;       
+  muted: #6a4e42;     
+  header-bg1: #5c4033; 
+  header-bg2: #8b5e3c;  
 }
 
 * { box-sizing: border-box; }
