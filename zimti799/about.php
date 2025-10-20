@@ -1,5 +1,7 @@
 <?php
 require_once __DIR__ . '/inc/db.php';
+
+include __DIR__ . '/inc/header.php'; 
 ?>
 
 <section class="container about-page">
