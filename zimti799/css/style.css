@@ -9,7 +9,7 @@
    /* width max*/
   --max-width: 1000px;
 
-   /* accent colour */
+   /* colour theme*/
   --accent: #b23a48;      
   --accent-dark: #8f2f3a;
   --bg: #f5efe7;          
@@ -20,19 +20,23 @@
   --header-bg2: #8b5e3c;  
 }
 
- box-sizing: border-box; 
+/* all elements on page have border box */
+* {
+ box-sizing: border-box;
+}
 
 body {
   font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+   /* reset default margins */
   margin: 0;
-  background: var(bg);
-  color: var(text);
+  background: var(--bg);
+  color: var(--text);
   line-height: 1.5;
 }
 
 /* Containers */
 .container {
-  max-width: var(max-width);
+  max-width: var(--max-width);
   margin: 22px auto;
   padding: 0 16px;
 }
