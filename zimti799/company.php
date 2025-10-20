@@ -63,4 +63,71 @@ if ($symbol) {
                   echo "<tr>
                         <td>$year</td>
                         <td>" . htmlspecialchars($data['earnings'] ?? 'N/A') . "</td>
-                        <td>" . htmlspecialchars($data['assets'] ?? 'N/A') . "</td>"
+                        <td>" . htmlspecialchars($data['assets'] ?? 'N/A') . "</td>
+                        <td>" . htmlspecialchars($data['liabilities'] ?? 'N/A') . "</td>
+                        </tr>";
+              }
+              echo "</tbody></table>";
+          }
+      }
+      ?>
+    </div>
+
+    <?php if ($history): ?>
+      <div class="summary-grid">
+        <div class="summary-box">
+          <h3>History High</h3>
+          <p>$<?= number_format($high, 2) ?></p>
+        </div>
+        <div class="summary-box">
+          <h3>History Low</h3>
+          <p>$<?= number_format($low, 2) ?></p>
+        </div>
+        <div class="summary-box">
+          <h3>Total Volume</h3>
+          <p><?= number_format($totalVolume) ?></p>
+        </div>
+        <div class="summary-box">
+          <h3>Average Volume</h3>
+          <p><?= number_format($avgVolume) ?></p>
+        </div>
+      </div>
+
+      <h3>History (<?= htmlspecialchars($company['symbol']) ?>)</h3>
+      <table class="history-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Volume</th>
+            <th>Open</th>
+            <th>Close</th>
+            <th>High</th>
+            <th>Low</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach ($history as $row): ?>
+            <tr>
+              <td><?= htmlspecialchars($row['date']) ?></td>
+              <td><?= number_format($row['volume']) ?></td>
+              <td>$<?= number_format($row['open'], 2) ?></td>
+              <td>$<?= number_format($row['close'], 2) ?></td>
+              <td>$<?= number_format($row['high'], 2) ?></td>
+              <td>$<?= number_format($row['low'], 2) ?></td>
+            </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
+    <?php else: ?>
+      <p>No history data available for this company.</p>
+    <?php endif; ?>
+  <?php endif; ?>
+</div>
+
+<footer>
+  © 2025 Stock Viewer — COMP 3512 Assignment 1
+</footer>
+
+</main>
+</body>
+</html>
