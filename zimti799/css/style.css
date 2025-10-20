@@ -95,4 +95,33 @@ body {
   color: var(--header-bg1);
 }
 
+/* ===== Navigation Buttons ===== */
+.nav a {
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 8px;
+  margin-left: 10px;
+  transition: background 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.nav a:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
+.nav a:active {
+  transform: scale(0.98);
+}
+
+/* Optional: header spacing tweak */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+
 
