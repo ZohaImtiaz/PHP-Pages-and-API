@@ -23,7 +23,7 @@ try {
 } catch (PDOException $e) {
     //internat server error mssf if try block fails 
     http_response_code(500);
-     // Output a user-safe version of the error message.
+     // Output a user safe version of the error message.
     echo "DB connection failed: " . htmlspecialchars($e->getMessage());
     exit;
 }
