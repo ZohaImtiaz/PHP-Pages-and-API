@@ -35,7 +35,7 @@ include __DIR__ . '/inc/header.php';
     <p>
       You can view the project source code here: 
       <a href="https://github.com/ZohaImtiaz/PHP-Pages-and-API" target="_blank">
-        https://github.com/yourusername/zimti799
+        https://github.com/ZohaImtiaz/PHP-Pages-and-API
       </a>
     </p>
   </div>
