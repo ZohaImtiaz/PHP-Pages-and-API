@@ -47,7 +47,7 @@ include __DIR__ . '/inc/header.php';
   </p>
 </section>
 <footer>
-  © 2025 Stock Viewer — COMP 3512 Assignment 1
+  © 2025 Stock Viewer - COMP 3512 Assignment 1
 </footer>
 </main>
 </body>
