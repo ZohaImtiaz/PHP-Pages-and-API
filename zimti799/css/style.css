@@ -34,7 +34,7 @@ body {
 
 /* Header */
 .site-header {
-  background: linear-gradient(90deg, var(--header-bg1), var(--header-bg2));
+  background: linear-gradient(90deg, var(header-bg1), var(header-bg2));
   color: white;
   padding: 14px 0;
   box-shadow: 0 2px 6px
