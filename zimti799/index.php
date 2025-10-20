@@ -27,7 +27,8 @@ $users = $stmt->fetchAll();
         <?php foreach ($users as $u): ?>
         <tr>
           <td><?= htmlspecialchars($u['lastName'] . ', ' . $u['firstName']) ?></td>
-          <td><a class="btn small" href="portfolio.php?userId=<?= $u['userId'] ?>">Portfolio</a></td>
+
+            <td><a class="btn small" href="portfolio.php?userId=<?= $u['userId'] ?>">Portfolio</a></td>
         </tr>
         <?php endforeach; ?>
       </tbody>
