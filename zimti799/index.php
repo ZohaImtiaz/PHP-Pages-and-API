@@ -22,6 +22,9 @@ $result = $pdo->query($sql);
   </ul>
 </div>
 
+<footer>
+  © 2025 Stock Viewer — COMP 3512 Assignment 1
+</footer>
 </main>
 </body>
 </html>
