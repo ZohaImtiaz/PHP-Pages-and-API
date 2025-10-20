@@ -2,66 +2,54 @@
 require_once __DIR__ . '/inc/db.php';
 include __DIR__ . '/inc/header.php';
 
-if (!isset($_GET['symbol']) || trim($_GET['symbol']) === '') {
-    echo '<section class="container"><p>No symbol provided. Go back to <a href="index.php">home</a>.</p></section>';
-    echo "</main></body></html>";
-    exit;
-}
-$symbol = trim($_GET['symbol']);
+$symbol = $_GET['symbol'] ?? '';
+$company = $pdo->prepare("SELECT * FROM stocks WHERE symbol = ?");
+$company->execute([$symbol]);
+$c = $company->fetch();
 
-try {
-    // Company details
-    $sql = "SELECT * FROM stocks WHERE symbol = :symbol LIMIT 1";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([':symbol' => $symbol]);
-    $company = $stmt->fetch();
-
-    if (!$company) {
-        echo '<section class="container"><p>Company not found. <a href="index.php">Back to home</a>.</p></section>';
-        echo "</main></body></html>";
-        exit;
-    }
-
-    // History
-    $sql = "SELECT date, open, close, high, low, volume FROM history WHERE symbol = :symbol ORDER BY date ASC";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([':symbol' => $symbol]);
+$history = [];
+if ($c) {
+    $stmt = $pdo->prepare("SELECT * FROM history WHERE symbol = ? ORDER BY date DESC");
+    $stmt->execute([$symbol]);
     $history = $stmt->fetchAll();
-} catch (Exception $e) {
-    echo '<section class="container"><p>Error: ' . htmlspecialchars($e->getMessage()) . '</p></section>';
-    echo "</main></body></html>";
-    exit;
+
+    $high = max(array_column($history, 'high'));
+    $low = min(array_column($history, 'low'));
+    $totalVol = array_sum(array_column($history, 'volume'));
+    $avgVol = round($totalVol / count($history));
 }
 ?>
-
-<section class="container">
-  <h2><?php echo htmlspecialchars($company['name']); ?> <small class="muted">(<?php echo htmlspecialchars($company['symbol']); ?>)</small></h2>
-
-  <?php if (!empty($company['industry'])): ?>
-    <p><strong>Industry:</strong> <?php echo htmlspecialchars($company['industry']); ?></p>
-  <?php endif; ?>
-
-  <?php if (!empty($company['summary'])): ?>
-    <p><strong>Summary:</strong><br><?php echo nl2br(htmlspecialchars($company['summary'])); ?></p>
-  <?php endif; ?>
-
-  <h3>Historical Prices</h3>
-  <?php if (empty($history)): ?>
-    <p>No historical data found for this company.</p>
+<section class="container company-layout">
+  <?php if (!$c): ?>
+    <div class="placeholder"><p>Company not found.</p></div>
   <?php else: ?>
+    <h2><?= htmlspecialchars($c['name']) ?> (<?= htmlspecialchars($c['symbol']) ?>)</h2>
+    <div class="company-info">
+      <p><strong>Sector:</strong> <?= htmlspecialchars($c['sector']) ?></p>
+      <p><strong>Industry:</strong> <?= htmlspecialchars($c['subIndustry']) ?></p>
+      <p><strong>Exchange:</strong> <?= htmlspecialchars($c['exchange']) ?></p>
+      <p><strong>Website:</strong> <a href="<?= htmlspecialchars($c['website']) ?>" target="_blank"><?= htmlspecialchars($c['website']) ?></a></p>
+    </div>
+
+    <div class="stats-row">
+      <div class="summary-box"><h3>History High</h3><p>$<?= number_format($high, 2) ?></p></div>
+      <div class="summary-box"><h3>History Low</h3><p>$<?= number_format($low, 2) ?></p></div>
+      <div class="summary-box"><h3>Total Volume</h3><p><?= number_format($totalVol) ?></p></div>
+      <div class="summary-box"><h3>Average Volume</h3><p><?= number_format($avgVol) ?></p></div>
+    </div>
+
+    <h3>History (3 M)</h3>
     <table class="history-table">
-      <thead>
-        <tr><th>Date</th><th>Open</th><th>High</th><th>Low</th><th>Close</th><th>Volume</th></tr>
-      </thead>
+      <thead><tr><th>Date</th><th>Volume</th><th>Open</th><th>Close</th><th>High</th><th>Low</th></tr></thead>
       <tbody>
-        <?php foreach ($history as $row): ?>
+        <?php foreach ($history as $h): ?>
           <tr>
-            <td><?php echo htmlspecialchars($row['date']); ?></td>
-            <td><?php echo htmlspecialchars($row['open']); ?></td>
-            <td><?php echo htmlspecialchars($row['high']); ?></td>
-            <td><?php echo htmlspecialchars($row['low']); ?></td>
-            <td><?php echo htmlspecialchars($row['close']); ?></td>
-            <td><?php echo htmlspecialchars($row['volume']); ?></td>
+            <td><?= htmlspecialchars($h['date']) ?></td>
+            <td><?= number_format($h['volume']) ?></td>
+            <td>$<?= number_format($h['open'], 2) ?></td>
+            <td>$<?= number_format($h['close'], 2) ?></td>
+            <td>$<?= number_format($h['high'], 2) ?></td>
+            <td>$<?= number_format($h['low'], 2) ?></td>
           </tr>
         <?php endforeach; ?>
       </tbody>
@@ -72,4 +60,3 @@ try {
 </main>
 </body>
 </html>
-
