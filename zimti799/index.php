@@ -7,8 +7,8 @@
 require_once __DIR__ . '/inc/db.php';
 include __DIR__ . '/inc/header.php';
 
-// Query users table — correct column names
-$sql = "SELECT id, first_name, last_name FROM users ORDER BY last_name ASC";
+
+$sql = "SELECT id, firstname, lastname FROM users ORDER BY lastname ASC";
 $result = $pdo->query($sql);
 ?>
 
@@ -19,7 +19,7 @@ $result = $pdo->query($sql);
     <ul class="company-list">
       <?php foreach ($result as $u): ?>
         <li>
-          <strong><?= htmlspecialchars($u['last_name']) ?>, <?= htmlspecialchars($u['first_name']) ?></strong>
+          <strong><?= htmlspecialchars($u['lastname']) ?>, <?= htmlspecialchars($u['firstname']) ?></strong>
           <a class="btn small" href="portfolio.php?ref=<?= urlencode($u['id']) ?>">Portfolio</a>
         </li>
       <?php endforeach; ?>
@@ -37,3 +37,4 @@ $result = $pdo->query($sql);
 </main>
 </body>
 </html>
+
