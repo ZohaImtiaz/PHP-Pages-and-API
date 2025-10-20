@@ -57,6 +57,10 @@ if ($c) {
   <?php endif; ?>
 </section>
 
+<footer>
+  © Stock Viewer — COMP 3512 Assignment 1
+</footer>
+
 </main>
 </body>
 </html>
