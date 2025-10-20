@@ -20,14 +20,14 @@
 body {
   font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
+  background: var(bg);
+  color: var(text);
   line-height: 1.5;
 }
 
 /* Containers */
 .container {
-  max-width: var(--max-width);
+  max-width: var(max-width);
   margin: 22px auto;
   padding: 0 16px;
 }
