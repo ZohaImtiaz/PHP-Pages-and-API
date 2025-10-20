@@ -12,7 +12,9 @@
   </table>
   <p class="hint">Each URL above links to the API endpoint returning JSON data.</p>
 </section>
-
+<footer>
+  © 2025 Stock Viewer — COMP 3512 Assignment 1
+</footer>
 </main>
 </body>
 </html>
