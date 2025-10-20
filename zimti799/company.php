@@ -63,4 +63,4 @@ if ($symbol) {
                   echo "<tr>
                         <td>$year</td>
                         <td>" . htmlspecialchars($data['earnings'] ?? 'N/A') . "</td>
-                        <td>" . htmlspecialchars($data['assets'] ?? 'N/A') . "</td>
+                        <td>" . htmlspecialchars($data['assets'] ?? 'N/A') . "</td>"
