@@ -4,12 +4,6 @@
   <h2>About This Project</h2>
 
   <p>
-    This website was created as <strong>Assignment #1</strong> for 
-    <strong>COMP 3512 – Server-Side Web Development</strong> at 
-    <strong>Mount Royal University</strong>.
-  </p>
-
-  <p>
     The project demonstrates the use of <strong>PHP</strong>, 
     <strong>SQLite</strong>, and <strong>PDO</strong> to dynamically 
     retrieve and display stock and portfolio data from a database.
