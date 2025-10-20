@@ -2,7 +2,7 @@
 // inc/db.php
 // PDO connection for SQLite. 
 
-$dbPath = __DIR__ . '/../data/stocks.db'; 
+$dbPath = __DIR__ . '/zimti799/data/stocks.db'; 
 
 if (!file_exists($dbPath)) {
     http_response_code(500);
