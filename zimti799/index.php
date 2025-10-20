@@ -7,7 +7,7 @@
 require_once __DIR__ . '/inc/db.php';
 include __DIR__ . '/inc/header.php';
 
-$sql = "SELECT userId, firstName, lastName FROM users";
+$sql = "SELECT id, firstName, lastName FROM users";
 $result = $pdo->query($sql);
 ?>
 
