@@ -3,6 +3,7 @@
 <?php
 // https://www.w3schools.com/css/css3_buttons.asp for styling navigation buttons and how to make it change colour when hovering over it.
 //https://www.w3schools.com/css/css3_gradients.asp gradient for title
+//https://getcssscan.com/css-buttons-examples
 
 require_once __DIR__ . '/inc/db.php';
 include __DIR__ . '/inc/header.php';
