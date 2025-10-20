@@ -2,41 +2,38 @@
 require_once __DIR__ . '/inc/db.php';
 include __DIR__ . '/inc/header.php';
 
-// Fetch companies for listing
 try {
-    $sql = "SELECT symbol, name FROM stocks ORDER BY name";
-    $stmt = $pdo->query($sql);
-    $companies = $stmt->fetchAll();
+    $stmt = $pdo->query("SELECT * FROM users ORDER BY lastName ASC");
+    $users = $stmt->fetchAll();
 } catch (Exception $e) {
-    $companies = [];
+    $users = [];
     $error = $e->getMessage();
 }
 ?>
-<section class="container">
-  <h2>Welcome</h2>
-  <p>This site is Assignment #1 for COMP3512 at Mount Royal University. Browse companies below.</p>
+<section class="container main-layout">
+  <aside class="sidebar">
+    <h2>Customers</h2>
+    <table class="customer-table">
+      <thead><tr><th>Name</th><th></th></tr></thead>
+      <tbody>
+        <?php foreach ($users as $u): ?>
+        <tr>
+          <td><?= htmlspecialchars($u['lastName'] . ', ' . $u['firstName']) ?></td>
+          <td><a class="btn small" href="portfolio.php?userId=<?= $u['userId'] ?>">Portfolio</a></td>
+        </tr>
+        <?php endforeach; ?>
+      </tbody>
+    </table>
+    <p class="hint">List of all the customers in the users table, sorted by last name.</p>
+  </aside>
 
-  <?php if (!empty($error)): ?>
-    <div class="error">Error fetching companies: <?php echo htmlspecialchars($error); ?></div>
-  <?php endif; ?>
-
-  <ul class="company-list">
-    <?php foreach ($companies as $c): ?>
-      <li>
-        <a href="company.php?symbol=<?php echo urlencode($c['symbol']); ?>">
-          <?php echo htmlspecialchars($c['name']); ?> <span class="muted">(<?php echo htmlspecialchars($c['symbol']); ?>)</span>
-        </a>
-      </li>
-    <?php endforeach; ?>
-  </ul>
-
-  <section class="notes">
-    <h3>Notes</h3>
-    <p>APIs (not used by pages in this assignment) are available under the <code>/api/</code> folder. See the API Tester link in the header to view sample JSON outputs.</p>
+  <section class="content-area">
+    <div class="placeholder">
+      <p><em>Provide message that user needs to select a customer’s portfolio.</em></p>
+    </div>
   </section>
 </section>
 
 </main>
 </body>
 </html>
-
