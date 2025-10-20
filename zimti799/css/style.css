@@ -15,7 +15,7 @@
   header-bg2: #8b5e3c;  
 }
 
-* { box-sizing: border-box; }
+{ box-sizing: border-box; }
 
 body {
   font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
