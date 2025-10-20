@@ -1,30 +1,18 @@
-<?php
-include __DIR__ . '/inc/header.php';
-?>
-<section class="container about">
-  <h2>About this site</h2>
-
-  <p>This project is <strong>Assignment #1 for COMP3512</strong> at Mount Royal University. The site uses PHP + PDO with an SQLite database to display company and historical stock data. </p>
-
-  <h3>Authors / Team</h3>
-  <ul>
-    <li>Zoha Imtiaz</li>
-  </ul>
-
-  <h3>Technologies</h3>
-  <ul>
-    <li>PHP (with PDO)</li>
-    <li>SQLite</li>
-    <li>HTML & CSS</li>
-  </ul>
-
-  <h3>GitHub</h3>
-  <p>Repository URL: <a href="https://github.com/ZohaImtiaz/PHP-Pages-and-API" target="_blank">https://github.com/yourusername/yourrepo</a></p>
-
-  <h3>Notes to marker</h3>
+<?php include __DIR__ . '/inc/header.php'; ?>
+<section class="container api-layout">
+  <h2>API List</h2>
+  <table class="history-table">
+    <thead><tr><th>URL</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td><a href="api/companies.php" target="_blank">/api/companies.php</a></td><td>Returns all companies/stocks</td></tr>
+      <tr><td><a href="api/companies.php?ref=aapl" target="_blank">/api/companies.php?ref=aapl</a></td><td>Returns a specific company/stock</td></tr>
+      <tr><td><a href="api/portfolio.php?ref=1" target="_blank">/api/portfolio.php?ref=1</a></td><td>Returns all portfolios for a specific customer</td></tr>
+      <tr><td><a href="api/history.php?ref=aapl" target="_blank">/api/history.php?ref=aapl</a></td><td>Returns stock history for a specific company</td></tr>
+    </tbody>
+  </table>
+  <p class="hint">Each URL above links to the API endpoint returning JSON data.</p>
 </section>
 
 </main>
 </body>
 </html>
-
