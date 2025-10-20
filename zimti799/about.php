@@ -1,16 +1,52 @@
 <?php include __DIR__ . '/inc/header.php'; ?>
-<section class="container api-layout">
-  <h2>API List</h2>
-  <table class="history-table">
-    <thead><tr><th>URL</th><th>Description</th></tr></thead>
-    <tbody>
-      <tr><td><a href="api/companies.php" target="_blank">/api/companies.php</a></td><td>Returns all companies/stocks</td></tr>
-      <tr><td><a href="api/companies.php?ref=aapl" target="_blank">/api/companies.php?ref=aapl</a></td><td>Returns a specific company/stock</td></tr>
-      <tr><td><a href="api/portfolio.php?ref=1" target="_blank">/api/portfolio.php?ref=1</a></td><td>Returns all portfolios for a specific customer</td></tr>
-      <tr><td><a href="api/history.php?ref=aapl" target="_blank">/api/history.php?ref=aapl</a></td><td>Returns stock history for a specific company</td></tr>
-    </tbody>
-  </table>
-  <p class="hint">Each URL above links to the API endpoint returning JSON data.</p>
+
+<section class="container about-page">
+  <h2>About This Project</h2>
+
+  <p>
+    This website was created as <strong>Assignment #1</strong> for 
+    <strong>COMP 3512 – Server-Side Web Development</strong> at 
+    <strong>Mount Royal University</strong>.
+  </p>
+
+  <p>
+    The project demonstrates the use of <strong>PHP</strong>, 
+    <strong>SQLite</strong>, and <strong>PDO</strong> to dynamically 
+    retrieve and display stock and portfolio data from a database.
+  </p>
+
+  <div class="notes">
+    <h3>Technologies Used</h3>
+    <ul>
+      <li>HTML5 & CSS3 with a custom beige/red/brown theme</li>
+      <li>PHP for dynamic page generation</li>
+      <li>PDO (PHP Data Objects) for database connectivity</li>
+      <li>SQLite database for data storage</li>
+    </ul>
+  </div>
+
+  <div class="notes">
+    <h3>Group Members</h3>
+    <ul>
+      <li><strong>Zoha Imtiaz</strong></li>
+    </ul>
+  </div>
+
+  <div class="notes">
+    <h3>GitHub Repository</h3>
+    <p>
+      You can view the project source code here: 
+      <a href="https://github.com/yourusername/zimti799" target="_blank">
+        https://github.com/yourusername/zimti799
+      </a>
+    </p>
+  </div>
+
+  <p style="margin-top: 20px;">
+    The purpose of this project is to build a simple stock portfolio viewer
+    that allows users to explore companies, their stock history, and customer
+    portfolios — all powered by PHP and an SQLite database.
+  </p>
 </section>
 
 </main>
