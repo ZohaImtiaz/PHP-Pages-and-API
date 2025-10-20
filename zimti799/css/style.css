@@ -250,5 +250,29 @@ footer {
   }
 }
 
+.btn, .btn.small, a.btn {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: var(--accent-dark);
+  color: #f5efe7;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.btn.small:hover, .btn:hover, a.btn:hover {
+  background-color: var(--accent);
+  transform: scale(1.05);
+}
+
+.btn.small:active, .btn:active {
+  transform: scale(0.97);
+}
+
+
 
 
