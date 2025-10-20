@@ -1,4 +1,6 @@
-<?php include __DIR__ . '/inc/header.php'; ?>
+<?php
+require_once __DIR__ . '/inc/db.php';
+?>
 
 <section class="container about-page">
   <h2>About This Project</h2>
