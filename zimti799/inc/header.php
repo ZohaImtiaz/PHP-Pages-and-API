@@ -13,7 +13,11 @@ $baseURL = '/zimti799/';
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <h1 class="brand"><a href="<?= $baseURL ?>index.php">COMP3512 - Stock Viewer</a></h1>
+
+      <h1 class="brand">
+        <a href="<?= $baseURL ?>index.php">Stock Viewer</a>
+      </h1>
+      
       <nav class="nav">
         <a href="<?= $baseURL ?>index.php">Home</a>
         <a href="<?= $baseURL ?>about.php">About</a>
