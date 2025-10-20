@@ -30,7 +30,7 @@
     <h3>GitHub Repository</h3>
     <p>
       You can view the project source code here: 
-      <a href="https://github.com/yourusername/zimti799" target="_blank">
+      <a href="https://github.com/ZohaImtiaz/PHP-Pages-and-API" target="_blank">
         https://github.com/yourusername/zimti799
       </a>
     </p>
