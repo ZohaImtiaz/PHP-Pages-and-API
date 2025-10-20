@@ -44,7 +44,9 @@ require_once __DIR__ . '/inc/db.php';
     portfolios — all powered by PHP and an SQLite database.
   </p>
 </section>
-
+<footer>
+  © 2025 Stock Viewer — COMP 3512 Assignment 1
+</footer>
 </main>
 </body>
 </html>
