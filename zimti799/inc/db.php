@@ -3,15 +3,6 @@
 // correct path to your database file
 $dbPath = __DIR__ . '/../data/stocks.db';
 
-// Check if database file exists
-if (!file_exists($dbPath)) {
-    http_response_code(500);
-    echo "<p style='color:red; font-weight:bold;'>❌ Database file not found at: " . htmlspecialchars($dbPath) . "</p>";
-    exit;
-}
-
-// confirm which database file PHP
-echo "<p style='color:red; font-weight:bold;'>DEBUG: Using database at: " . htmlspecialchars($dbPath) . "</p>";
 
 try {
     // Create a PDO connection to SQLite
