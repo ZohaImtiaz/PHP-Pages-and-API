@@ -47,4 +47,52 @@ body {
   color: white;
   padding: 14px 0;
   box-shadow: 0 2px 6px
+}
+
+/* Summary boxes (for portfolio/company pages) */
+.summary-grid, .stats-row {
+  display: flex;
+  gap: 16px;
+  margin: 12px 0 18px 0;
+}
+.summary-box {
+  flex: 1;
+  background: var(--card);
+  border: 2px solid #e2d5c4;
+  border-radius: 10px;
+  text-align: center;
+  padding: 14px 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.summary-box h3 {
+  color: var(--header-bg1);
+  margin: 0 0 6px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+.summary-box p {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+}
+
+/* Company layout spacing */
+.company-layout h2 {
+  margin-bottom: 8px;
+}
+.company-info p {
+  margin: 4px 0;
+  color: var(--text);
+}
+.api-layout table {
+  margin-top: 10px;
+}
+.about-page {
+  text-align: center;
+  color: var(--muted);
+}
+.about-page h2 {
+  color: var(--header-bg1);
+}
+
 
