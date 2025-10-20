@@ -4,7 +4,7 @@
 
 /* */
 /*directory path to current file.*/
-$dbPath = __DIR__ . '/zimti799/data/stocks.db'; 
+$dbPath = __DIR__ . '/../data/stocks.db'; 
 
 /* if file doesnt exits at this path*/
 if (!file_exists($dbPath)) {
