@@ -10,51 +10,153 @@
   --max-width: 1000px;
 
    /* colour theme*/
-  --accent: #b23a48;      
-  --accent-dark: #8f2f3a;
-  --bg: #f5efe7;          
-  --card: #fffaf4;       
-  --text: #2f1e14;       
-  --muted: #6a4e42;     
-  --header-bg1: #5c4033; 
-  --header-bg2: #8b5e3c;  
-}
-
-/* all elements on page have border box */
-* {
- box-sizing: border-box;
+:root {
+  --bg: #F5EDE0;
+  --card: #FAF6F1;
+  --text: #3B2F2F;
+  --muted: #7C5E57;
+  --accent: #9C3D3A;
+  --accent-dark: #702B29;
+  --header-bg1: #4A2F27;
+  --header-bg2: #7B5234;
+  --max-width: 1000px;
 }
 
 body {
   font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-   /* reset default margins */
   margin: 0;
-  background: var(--bg);
+  background: linear-gradient(180deg, var(--bg) 0%, #fffdf9 100%);
   color: var(--text);
   line-height: 1.5;
 }
 
-/* Containers */
 .container {
   max-width: var(--max-width);
   margin: 22px auto;
   padding: 0 16px;
 }
 
-/* Header */
 .site-header {
-  background: linear-gradient(90deg, var(header-bg1), var(header-bg2));
+  background: linear-gradient(90deg, var(--header-bg1), var(--header-bg2));
   color: white;
   padding: 14px 0;
-  box-shadow: 0 2px 6px
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* Summary boxes (for portfolio/company pages) */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.brand a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.nav a {
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 8px;
+  margin-left: 10px;
+  transition: background 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav a:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
+.nav a:active {
+  transform: scale(0.98);
+}
+
+.company-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+}
+
+.company-list li {
+  background: var(--card);
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.company-list a {
+  text-decoration: none;
+  color: var(--text);
+  display: block;
+}
+
+.company-list .muted {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-left: 6px;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+.history-table th, .history-table td {
+  padding: 8px 10px;
+  border: 1px solid #e6e9ef;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.history-table thead th {
+  background: #f3eee8;
+  font-weight: 700;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.btn:hover {
+  background: var(--accent-dark);
+  transform: scale(1.05);
+}
+
+.btn.small {
+  font-size: 0.85rem;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.card, .notes, .sidebar, .content-area {
+  background: var(--card);
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+  border-radius: 10px;
+}
+
 .summary-grid, .stats-row {
   display: flex;
   gap: 16px;
   margin: 12px 0 18px 0;
 }
+
 .summary-box {
   flex: 1;
   background: var(--card);
@@ -64,36 +166,29 @@ body {
   padding: 14px 10px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
+
 .summary-box h3 {
   color: var(--header-bg1);
   margin: 0 0 6px;
   font-size: 0.9rem;
   text-transform: uppercase;
 }
+
 .summary-box p {
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--accent-dark);
 }
 
-/* Company layout spacing */
-.company-layout h2 {
-  margin-bottom: 8px;
-}
-.company-info p {
-  margin: 4px 0;
-  color: var(--text);
-}
-.api-layout table {
-  margin-top: 10px;
-}
 .about-page {
   text-align: center;
   color: var(--muted);
 }
+
 .about-page h2 {
   color: var(--header-bg1);
 }
+
 
 /* ===== Navigation Buttons ===== */
 .nav a {
